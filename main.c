@@ -39,8 +39,9 @@
 #include "main.h"
 #include "myfreqresp_terminate.h"
 #include "myfreqresp_initialize.h"
-#include "stdio.h"
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /* Function Declarations */
 static void argInit_1x2_real_T(double result[2]);
@@ -70,19 +71,51 @@ static double argInit_real_T(void)
 
 static void main_myfreqresp(void)
 {
-  double dv0[2];
+  float d[2];
+  float n;
+  float w;
   double z;
+  double dd[2];
   
-  dv0[0] =1.0;
-  dv0[1] =2.0;
+  char c[10];
+  
+  memset(c,0,10);
+  
+  
+  //dv0[0] =1.0;
+  //%dv0[1] =2.0;
   
 
   /* Initialize function 'myfreqresp' input arguments. */
   /* Initialize function input argument 'D'. */
   /* Call the entry-point 'myfreqresp'. */
   //argInit_1x2_real_T(dv0);
-  z = myfreqresp(1.0, dv0, 1.0);
-  printf("El modulo de G(s)=N(s)/D(s) es: %.2f",z);
+  
+  
+  printf("\n Introduce el valor de K: ");
+  scanf("%g",&n);
+  printf("El valor introducido para K es %.2f",n);
+ 
+  printf("\n Introduce el valor de d(1): ");
+  scanf("%g",&d[0]);
+  printf("El valor introducido para d(1) es %.2f",d[0]);
+  memset(c,0,10);
+  
+  printf("\n Introduce el valor de d(2): ");
+  scanf("%g",&d[1]);
+  printf("El valor introducido para d(2) es %.2f",d[1]);
+  memset(c,0,10);
+
+  printf("\n Introduce el valor de w: ");
+  scanf("%g",&w);
+  printf("El valor introducido para w es %.2f",w);
+
+  dd[0] = (double)d[0];
+  dd[1] = (double)d[1];
+  
+  z = myfreqresp((double)n, dd, (double)w);
+  printf("\n\nEl modulo de G(s)= %.2f/(s*%.2f + %.2f)es: %.2f\n",n,d[0],d[1],z);
+  
   
   
 }
