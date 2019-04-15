@@ -1,0 +1,23 @@
+EXE_P1.dev
+EXE_P1.exe
+EXE_P1.layout
+Makefile.win
+Nuevo documento de texto.txt
+buildInfo.mat
+codeInfo.mat
+gcGuiReport.mat
+examples/
+html/
+interface/
+main - copia.c
+main.o
+myDCsim.slx
+myfreqresp.o
+myfreqresp_initialize.o
+myfreqresp_ref.rsp
+myfreqresp_rtw.mk
+myfreqresp_terminate.o
+rtGetInf.o
+rtGetNaN.o
+rt_nonfinite.o
+rtw_proj.tmw
