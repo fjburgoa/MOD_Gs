@@ -94,7 +94,7 @@ static void main_myfreqresp(void)
   /* Call the entry-point 'myfreqresp'. */
   //argInit_1x2_real_T(dv0);
   
-  /*
+  
   printf("\n Introduce el valor de K: ");
   scanf("%g",&n);
   printf("El valor introducido para K es %.2f",n);
@@ -116,44 +116,8 @@ static void main_myfreqresp(void)
   dd[0] = (double)d[0];
   dd[1] = (double)d[1];
   
-  */
   
-  fptr = fopen("data.txt","r");
-  if(fptr == NULL)
-  {
-      printf("Error!");   
-      exit(1);             
-  }
-  
-  fscanf(fptr,"%s", c);
-  //printf("El valor introducido para K es %s\n",c);  
-  n = atof(c);
-  printf("El valor introducido para K es %.2f\n",n);
-  memset(c,0,10);
-  
-  fscanf(fptr,"%s", c);
-  //printf("El valor introducido para d(1) es %s\n",c);  
-  d[0] = atof(c);
-  printf("El valor introducido para d(1) es %.2f\n",d[0]);
-  memset(c,0,10);
-  
-  fscanf(fptr,"%s", c);
-  //printf("El valor introducido para d(2) es %s\n",c);
-  d[1] = atof(c);
-  printf("El valor introducido para d(2) es %.2f\n",d[1]);  
-  memset(c,0,10);
-  
-  fscanf(fptr,"%s", c);
-  //printf("El valor introducido para w es %s\n", c);
-  w = atof(c);
-  printf("El valor introducido para w es %.2f\n",w);    
-  memset(c,0,10);
-  
-  fclose(fptr);
-  
-  dd[0] = (double)d[0];
-  dd[1] = (double)d[1];
-  
+ 
   z = myfreqresp((double)n, dd, (double)w);
   printf("\n\nEl modulo de G(s)= %.2f/(s*%.2f + %.2f)es: %.2f\n",n,d[0],d[1],z);
   
